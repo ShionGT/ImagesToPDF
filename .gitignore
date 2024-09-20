@@ -4,10 +4,10 @@ __pycache__/
 *$py.class
 
 #Medias
-.jpg
-.jpeg
-.png
-.pdf
+*.jpg
+*.jpeg
+*.png
+*.pdf
 
 # C extensions
 *.so
