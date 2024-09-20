@@ -9,7 +9,7 @@ def main():
 
     images = []
 
-    for file in os.listdir(source_dir):
+    for file in sorted(os.listdir(source_dir)):
         if file.split('.')[-1] in ('png', 'jpg', 'jpeg'):
             image = Image.open(os.path.join(source_dir, file))
             image_converted = image.convert('RGB')
