@@ -1,6 +1,5 @@
 import os
 from PIL import Image
-from fontTools.subset import save_font
 
 
 def main():
