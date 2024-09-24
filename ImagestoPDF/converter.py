@@ -1,8 +1,8 @@
 import os
 from PIL import Image
 
-
 def main():
+
     output_dir = "./PDFs"
     source_dir = "./Images"
 
@@ -12,8 +12,9 @@ def main():
         if file.split('.')[-1] in ('png', 'jpg', 'jpeg'):
             image = Image.open(os.path.join(source_dir, file))
             image_converted = image.convert('RGB')
-            #image_converted.save(os.path.join(output_dir, '{0}.pdf'.format(file.split('.')[-2])))
             images.append(image_converted)
+    if len(images) == 0:
+        return
     images[0].save("./PDFs/merged.pdf", save_all=True, append_images=images)
 
 
