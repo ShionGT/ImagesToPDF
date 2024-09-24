@@ -1,11 +1,8 @@
 # ImagesToPDF
-Converts a group of images to a single PDF file using Python. 
+Converts a group of images to a single PDF file using a Python interpreter. This code supports converting JPG, JPEG, and PNG files. Before conversion, it is adjusted to organize the files alphabetically.
 
-# Starters
-Please have an interpreter. This code supports conversion of jpg, jpeg, and png. Before conversion, adjusted to organize the files alphabetically.
-
-# Instruction
+# Use
 Place the images you wish to convert in the "Images" folder. Execute the code, and the converted images will be inside the "PDFs" folder.
 
-# Usage
-Built using Python.
+# Build
+Built using Pillow on Python.
