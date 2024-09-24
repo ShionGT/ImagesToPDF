@@ -1,15 +1,15 @@
-import tkinter
 import tkinter as tk
 import os
 from PIL import Image
+import sys
 
 class GUI:
 
     def __init__(self):
 
-        # directories
-        self.output_dir = "./PDFs"
-        self.source_dir = "./Images"
+        # Directories (use resource_path for bundled or local paths)
+        self.source_dir = self.resource_path("Images")
+        self.output_dir = self.resource_path("PDFs")
 
         # buttons
         self.convert_button = None
@@ -18,6 +18,17 @@ class GUI:
         self.open_pdf_file_button = None
 
         self.root = None
+
+
+
+    def resource_path(self, relative_path):
+        """ Get the absolute path to the resource, works for PyInstaller as well. """
+        try:
+            base_path = sys._MEIPASS  # Extracted temp directory when bundled by PyInstaller
+        except AttributeError:
+            base_path = os.path.abspath(".")  # During development
+
+        return os.path.join(base_path, relative_path)
 
 
     def convert_button_pressed(self):
@@ -41,6 +52,7 @@ class GUI:
             return
         self.has_converted = True
         images[0].save(self.output_dir + "/merged.pdf", save_all=True, append_images=images)
+        print("Convert image to PDF completed.")
 
         # Open folder
         if os.path.exists(self.output_dir):
@@ -49,6 +61,7 @@ class GUI:
 
 
     def open_image_file_pressed(self):
+        print("Open image file at " + self.source_dir)
         # Open images folder
         if os.path.exists(self.source_dir):
             # os.startfile(self.source_dir)  # For Windows
@@ -56,6 +69,7 @@ class GUI:
 
 
     def open_pdf_file_pressed(self):
+        print("Open pdf file at " + self.output_dir)
         # Open PDF folder
         if os.path.exists(self.output_dir):
             # os.startfile(self.source_dir)  # For Windows
@@ -63,6 +77,7 @@ class GUI:
 
 
     def main(self):
+
 
         self.root = tk.Tk()
 
@@ -88,8 +103,6 @@ class GUI:
         # Button Size
         button_height = int(win_height * 0.008)
         button_width = int(win_width * 0.05)
-        print(button_width, button_height)
-        print(win_width, win_height)
 
         tk.Label(height=button_height).pack(side=tk.TOP)
 
