@@ -5,4 +5,4 @@ Converts a group of images to a single PDF file using a Python interpreter. This
 Place the images you wish to convert in the "Images" folder. Execute the code, and the converted images will be inside the "PDFs" folder.
 
 # Build
-Built using Pillow on Python.
+Built using Pillow on Python 3.
