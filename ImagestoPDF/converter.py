@@ -1,12 +1,14 @@
 import os
 from PIL import Image
+from PIL.ImageFile import ImageFile
+
 
 def main():
 
     output_dir = "./PDFs"
     source_dir = "./Images"
 
-    images = []
+    images: list[ImageFile] = []
 
     for file in sorted(os.listdir(source_dir)):
         if file.split('.')[-1] in ('png', 'jpg', 'jpeg'):
