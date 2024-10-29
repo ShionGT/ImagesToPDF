@@ -27,6 +27,7 @@ def download_pdf():
         return
 
     images[0].save(download_path + "/merged.pdf", save_all=True, append_images=images)
+    messagebox.showinfo("Success", "Downloaded PDF successfully.")
 
 def browse_images_path():
     selected_path = filedialog.askdirectory()
@@ -59,7 +60,7 @@ pdf_path_entry.grid(row=1, column=1, padx=10, pady=10)
 browse_button = tk.Button(app, text="Browse", command=browse_pdf_path)
 browse_button.grid(row=1, column=2, padx=10, pady=10)
 
-download_button = tk.Button(app, text="Convert", command=download_pdf, bg="green", fg="white")
+download_button = tk.Button(app, text="Convert", command=download_pdf)
 download_button.grid(row=2, column=1, padx=10, pady=20)
 
 app.mainloop()
