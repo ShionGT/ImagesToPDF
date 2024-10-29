@@ -1,2 +1,9 @@
 # Images To PDF
 Converts a group of images to a single PDF file using Python. This code supports converting JPG, JPEG, and PNG files. Before conversion, it is adjusted to organize the files alphabetically.
+
+# External Libraries
+List of External Libraries Used:
+defusedxml==0.7.1
+fonttools==4.53.1
+fpdf2==2.7.9
+pillow==10.4.0
