@@ -3,7 +3,7 @@ Converts a group of images to a single PDF file using Python. This code supports
 
 # External Libraries
 List of External Libraries Used:
-defusedxml==0.7.1
-fonttools==4.53.1
-fpdf2==2.7.9
-pillow==10.4.0
+- defusedxml v0.7.1
+- fonttools v4.53.1
+- fpdf2 v2.7.9
+- pillow v10.4.0
